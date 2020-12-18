@@ -6,7 +6,7 @@
 /*   By: rcarmen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:45:31 by rcarmen           #+#    #+#             */
-/*   Updated: 2020/12/15 14:19:20 by rcarmen          ###   ########.fr       */
+/*   Updated: 2020/12/17 14:45:49 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,23 @@ int			get_next_line(int fd, char **line)
 	}
 	ft_memdel(&buf);
 	return (ft_handle_remain_line(rs, line, &remain_pre_line, tmp));
+}
+
+int			main()
+{
+	int fd = open("file", O_RDONLY);
+	// int fd = 0;
+	char *line;
+	int i;
+
+	get_next_line(180, &line);
+	printf("%s\n", line);
+ 	while ((i = get_next_line(fd, &line)))
+ 	{
+ 		printf("%d --- %s\n", i, line);
+ 		free(line);
+ 	}
+ 	printf("%d --- %s\n", i, line);
+ 	free(line);
+ 	return (0);
 }
