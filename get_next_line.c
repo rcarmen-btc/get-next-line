@@ -41,8 +41,12 @@ char **remain_pre_line, char *tmp)
 {
 	size_t		distance_to_n;
 
+	distance_to_n = 0;
 	if (rs < 0)
+	{
+		ft_memdel(remain_pre_line);
 		return (-1);
+ 	}
 	else if (rs == 0)
 	{
 		*line = ft_strdup(*remain_pre_line);
@@ -86,21 +90,3 @@ int			get_next_line(int fd, char **line)
 	return (ft_handle_remain_line(rs, line, &remain_pre_line, tmp));
 }
 
-int			main()
-{
-	int fd = open("file", O_RDONLY);
-	// int fd = 0;
-	char *line;
-	int i;
-
-	get_next_line(180, &line);
-	printf("%s\n", line);
- 	while ((i = get_next_line(fd, &line)))
- 	{
- 		printf("%d --- %s\n", i, line);
- 		free(line);
- 	}
- 	printf("%d --- %s\n", i, line);
- 	free(line);
- 	return (0);
-}
