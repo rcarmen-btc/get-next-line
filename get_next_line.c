@@ -6,7 +6,7 @@
 /*   By: rcarmen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:45:31 by rcarmen           #+#    #+#             */
-/*   Updated: 2020/12/17 14:45:49 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/01/01 17:08:39 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char **remain_pre_line, char *tmp)
 	{
 		ft_memdel(remain_pre_line);
 		return (-1);
- 	}
+	}
 	else if (rs == 0)
 	{
 		*line = ft_strdup(*remain_pre_line);
@@ -89,4 +89,3 @@ int			get_next_line(int fd, char **line)
 	ft_memdel(&buf);
 	return (ft_handle_remain_line(rs, line, &remain_pre_line, tmp));
 }
-

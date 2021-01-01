@@ -6,7 +6,7 @@
 /*   By: rcarmen <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 13:49:40 by rcarmen           #+#    #+#             */
-/*   Updated: 2020/12/15 13:52:17 by rcarmen          ###   ########.fr       */
+/*   Updated: 2021/01/01 17:07:28 by rcarmen          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <fcntl.h>
-# include <stdio.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 4096
